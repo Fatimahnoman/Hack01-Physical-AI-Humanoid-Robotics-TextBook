@@ -4,7 +4,6 @@ on:
   push:
     branches:
       - main
-    # Review filter config: https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#onpushpull_requestpull_request_targetpathspaths-ignore
     paths-ignore:
       - 'README.md'
       - '.gitignore'
@@ -16,6 +15,9 @@ jobs:
   deploy:
     name: Deploy to GitHub Pages
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: Hack01-Physical-AI-Humanoid-Robotics-TextBook-main
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -27,6 +29,7 @@ jobs:
         with:
           node-version: 18
           cache: npm
+          cache-dependency-path: Hack01-Physical-AI-Humanoid-Robotics-TextBook-main/package-lock.json
 
       - name: Install dependencies
         run: npm ci
@@ -34,13 +37,9 @@ jobs:
       - name: Build website
         run: npm run build
 
-      # Popular action to deploy to GitHub Pages:
-      # Docs: https://github.com/peaceiris/actions-gh-pages
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          # Build output to publish
-          publish_dir: ./build
-          # The default branch to deploy to is gh-pages
+          publish_dir: ./Hack01-Physical-AI-Humanoid-Robotics-TextBook-main/build
           publish_branch: gh-pages
