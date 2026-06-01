@@ -15,9 +15,6 @@ jobs:
   deploy:
     name: Deploy to GitHub Pages
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: Hack01-Physical-AI-Humanoid-Robotics-TextBook-main
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -27,9 +24,8 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: 18
+          node-version: 20
           cache: npm
-          cache-dependency-path: Hack01-Physical-AI-Humanoid-Robotics-TextBook-main/package-lock.json
 
       - name: Install dependencies
         run: npm ci
@@ -41,5 +37,5 @@ jobs:
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./Hack01-Physical-AI-Humanoid-Robotics-TextBook-main/build
+          publish_dir: ./build
           publish_branch: gh-pages
