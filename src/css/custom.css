@@ -1,0 +1,216 @@
+/**
+ * Any CSS included here will be global. The classic template
+ * bundles Infima by default. Infima is a CSS framework designed to
+ * work well for content-centric websites.
+ */
+
+:root {
+  --ifm-code-font-size: 95%;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+
+  /* Custom Sidebar Colors */
+  --custom-sidebar-bg-light: #87CEEB; /* Sky Blue */
+  --custom-text-black-light: #FFD700; /* Gold for topics */
+  --custom-subheading-color: #FFD700; /* Gold for sub-headings */
+  --custom-subheading-color-rgb: 255, 215, 0; /* RGB for gold for rgba usage */
+  --custom-subheading-color-darker: #333333; /* Darker blue for border */
+  --custom-link-hover-color: #FFD700; /* Using Gold for hover */
+  --custom-link-active-color: #87CEEB; /* Using Sky Blue for active */
+  --ifm-color-primary: #25c2a0;
+  --ifm-color-primary-dark: #21af90;
+  --ifm-color-primary-darker: #1fa588;
+  --ifm-color-primary-darkest: #1a8870;
+  --ifm-color-primary-light: #29d5b0;
+  --ifm-color-primary-lighter: #32d8b4;
+  --ifm-color-primary-lightest: #4fddbf;
+}
+
+[data-theme='dark'] {
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+
+  /* Custom Sidebar Colors for Dark Mode */
+  --custom-sidebar-bg-dark: #87CEEB; /* Sky Blue */
+  --custom-text-black-dark: #FFD700; /* Gold for topics in dark mode */
+  --custom-subheading-color: #FFD700; /* Gold for dark mode sub-headings */
+  --ifm-color-primary: #25c2a0;
+  --ifm-color-primary-dark: #21af90;
+  --ifm-color-primary-darker: #1fa588;
+  --ifm-color-primary-darkest: #1a8870;
+  --ifm-color-primary-light: #29d5b0;
+  --ifm-color-primary-lighter: #32d8b4;
+  --ifm-color-primary-lightest: #4fddbf;
+}
+
+/*
+ * ============================================================================
+ * General Styles
+ * ============================================================================
+ */
+
+.navbar {
+  background-color: #000000; /* Black */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+}
+
+.footer {
+  background-color: #000000; /* Black */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+  border-top: 1px solid #6ab8d6;
+}
+
+.navbar__link,
+.navbar__brand {
+  color: #FFFFFF; /* White */
+}
+
+/*
+ * ============================================================================
+ * Custom Sidebar Styles
+ * ============================================================================
+ */
+
+/* Sidebar container */
+.menu {
+  padding: 0.5rem;
+  background-color: var(--custom-sidebar-bg-light); /* Grey background */
+  border-right: 1px solid var(--ifm-toc-border-color);
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+}
+
+[data-theme='dark'] .menu {
+  background-color: var(--custom-sidebar-bg-dark); /* Dark grey background */
+  box-shadow: 2px 0 15px rgba(0, 0, 0, 0.3);
+}
+
+/* All links in the sidebar */
+.menu__link {
+  border-radius: 6px;
+  transition: all 0.2s ease;
+  font-weight: 500;
+  padding-left: 1rem;
+  margin-bottom: 0.1rem;
+  color: inherit;
+}
+
+/* Main topics (top-level links) */
+.menu__list > .menu__list-item > .menu__link {
+  color: var(--custom-text-black-light); /* Black for main topics */
+  font-size: 1.1rem; /* Increased font size */
+  font-weight: 700;
+}
+
+[data-theme='dark'] .menu__list > .menu__list-item > .menu__link {
+  color: var(--custom-text-black-dark);
+}
+
+/* Sub-headings (nested links) */
+.menu__list-item .menu__list-item > .menu__link {
+  color: var(--custom-subheading-color); /* Deep Blue for sub-headings */
+  font-size: 1rem;
+}
+
+/* Hover effect for all links */
+.menu__link:hover {
+  background-color: rgba(var(--custom-subheading-color-rgb), 0.1);
+  color: var(--custom-link-hover-color);
+}
+
+/* Active link styling */
+.menu__link--active {
+  color: white; /* White text for active link */
+  background-color: var(--custom-link-active-color); /* Now defined as Sky Blue */
+  border-left: 4px solid var(--custom-subheading-color-darker); /* Darker blue border */
+  font-weight: 700;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Don't apply the same background to active category parents */
+.menu__list-item--collapsed .menu__link--active {
+    background-color: transparent;
+    color: var(--custom-subheading-color); /* Show blue for active collapsed parent */
+    box-shadow: none;
+    border-left-color: transparent;
+}
+
+[data-theme='dark'] .menu__link--active {
+  color: #e9ecef; /* Lighter color for dark theme active link */
+  background-color: var(--custom-subheading-color);
+  border-left-color: var(--custom-subheading-color);
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.4);
+}
+
+/*
+ * ============================================================================
+ * Right Sidebar (Table of Contents) Styles
+ * ============================================================================
+ */
+
+.theme-doc-toc-desktop {
+  background-color: #808080; /* Grey */
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: -2px 0 10px rgba(0, 0, 0, 0.05);
+}
+
+.theme-doc-toc-desktop .toc-heading {
+  color: #000000; /* Black */
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.theme-doc-toc-desktop .table-of-contents a {
+  color: #000000; /* Black */
+}
+
+.theme-doc-toc-desktop .table-of-contents a:hover {
+  color: #333333; /* Darker Grey for hover */
+}
+
+.theme-doc-toc-desktop .table-of-contents .toc-link--active {
+  color: #e74c3c; /* Coral - keeping this as it is a distinct highlight */
+  font-weight: 700;
+}
+
+.hero--primary {
+  background: #000000;
+  color: white;
+}
+
+.hero__title {
+  font-size: 4rem;
+  font-weight: bold;
+  color: white;
+}
+
+.hero__subtitle {
+  font-size: 1.5rem;
+  color: white;
+}
+
+.feature {
+  border-radius: 10px;
+  padding: 2rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.feature:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+}
+
+.button--primary {
+  background-color: #e74c3c;
+  border-color: #e74c3c;
+  transition: background-color 0.2s, border-color 0.2s;
+}
+
+.button--primary:hover {
+  background-color: #c0392b;
+  border-color: #c0392b;
+}
+
+.buttons .button {
+  margin-top: 1rem;
+}
