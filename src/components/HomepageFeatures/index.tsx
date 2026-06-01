@@ -11,32 +11,32 @@ type FeatureItem = {
 
 const FeatureList: FeatureItem[] = [
   {
-    title: 'In-Depth Chapters',
-    Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
-    description: (
-      <>
-        Explore detailed chapters covering everything from neural networks to
-        reinforcement learning.
-      </>
-    ),
-  },
-  {
-    title: 'Interactive Examples',
+    title: 'Advanced Kinematics',
     Svg: require('@site/static/img/robot_icon.svg').default,
     description: (
       <>
-        Engage with interactive code examples and visualizations to solidify
-        your understanding.
+        Master the mathematical foundations of humanoid movement, from forward 
+        kinematics to complex trajectory planning in dynamic environments.
       </>
     ),
   },
   {
-    title: 'For All Levels',
+    title: 'Embodied Intelligence',
     Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
     description: (
       <>
-        Whether you're a beginner or an expert, you'll find valuable
-        insights and knowledge.
+        Explore how AI interacts with the physical world through sensor fusion, 
+        real-time perception, and neural control systems.
+      </>
+    ),
+  },
+  {
+    title: 'HRI & Social Robotics',
+    Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
+    description: (
+      <>
+        Bridging the gap between humans and machines through natural interaction, 
+        ethical AI, and collaborative task execution.
       </>
     ),
   },

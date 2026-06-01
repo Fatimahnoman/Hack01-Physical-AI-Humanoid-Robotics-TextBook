@@ -18,7 +18,9 @@ function HomepageHeader() {
           <RobotIcon className={styles.heroIcon} />
           {siteConfig.title}
         </Heading>
-        <p className="hero__subtitle">{siteConfig.tagline}</p>
+        <p className="hero__subtitle">
+          A Comprehensive Technical Guide to Embodied AI, Humanoid Design, and Intelligent Control Systems.
+        </p>
         <div className={styles.buttons}>
           <Link
             className="button button--primary button--lg"
